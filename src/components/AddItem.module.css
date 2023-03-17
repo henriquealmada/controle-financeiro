@@ -1,0 +1,54 @@
+.card {
+  margin-top: 2rem;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group label {
+  display: block;
+}
+
+.form-group input {
+  padding: 0.5rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-group input {
+  margin-right: 0.3rem;
+}
+
+button {
+  background-color: #008180;
+  color: #fff;
+  border: none;
+  padding: 1.2rem 0.5rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+  form {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+  }
+}

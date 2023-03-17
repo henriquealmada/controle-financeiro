@@ -1,0 +1,18 @@
+.list {
+  margin-top: 2rem;
+}
+
+.list header {
+  display: flex;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.275);
+  padding-bottom: 0.5rem;
+}
+
+.list header span {
+  flex: 2;
+}
+
+.list header span:nth-of-type(3) {
+  flex: 1;
+}

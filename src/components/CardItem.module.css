@@ -1,0 +1,16 @@
+.card {
+  flex: 1;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.value {
+  font-weight: bold;
+  font-size: 1.7rem;
+}

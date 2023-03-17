@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import AddItem from './components/AddItem'
+import Cards from './components/Cards'
+import List from './components/List'
+import Layout from './layout/Layout'
+
+import Expense from './models/Expense'
+
+import { useContext } from 'react'
+import { ExpensesContext } from './store/expenses-context'
 
 function App() {
+  const expensesCtx = useContext(ExpensesContext)
+
+  const addHandler = (expense: Expense) => {
+    expensesCtx.addExpense(expense)
+  }
+
+  const removeHandler = (id: number) => {
+    expensesCtx.removeExpense(id)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Cards />
+        <AddItem onAdd={addHandler} />
+        <List expenses={expensesCtx.items} onRemove={removeHandler} />
+      </Layout>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
